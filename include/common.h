@@ -44,11 +44,9 @@
 #define ARRAY_2D_COLUMN(x)      sizeof(x[0])/sizeof(x[0][0])
 
 /*!
- * \brief Definition of NULL macro for pointer comparision
+ * \brief Definition of static assert macro
  */
-#ifndef NULL
-#define NULL  (void*)0
-#endif
+#define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND)?1:-1]
 
 /*!
  * \brief Dummy function prototype to silence compiler warning
