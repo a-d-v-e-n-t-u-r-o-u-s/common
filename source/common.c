@@ -26,4 +26,5 @@
 
 void COMMON_dummy(void)
 {
+    /* dummy function definition to silence compiler warning for time till c file is empty */
 }
