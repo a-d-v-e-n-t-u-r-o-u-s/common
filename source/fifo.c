@@ -94,7 +94,7 @@ FIFO_elements_no_t FIFO_get_occupied(const FIFO_t *fifo)
     }
 }
 
-FIFO_elements_no_t FIFO_get_free(FIFO_t *fifo)
+FIFO_elements_no_t FIFO_get_free(const FIFO_t *fifo)
 {
     return fifo->config.elements_no - FIFO_get_occupied(fifo);
 }
