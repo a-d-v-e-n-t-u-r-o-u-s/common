@@ -23,10 +23,9 @@
 
 #include "fifo.h"
 #include <string.h>
-//#include "stm8l15x.h"
 #include "common.h"
 
-static INLINE_SPECIFIER int8_t is_fifo_full(FIFO_t *fifo)
+static INLINE_SPECIFIER int8_t is_fifo_full(const FIFO_t *fifo)
 {
     if((fifo->head - fifo->tail) == fifo->config.elements_no)
     {
@@ -53,7 +52,7 @@ int8_t FIFO_enqueue(FIFO_t *fifo, const void *data)
     return 0;
 }
 
-static INLINE_SPECIFIER int8_t is_fifo_empty(FIFO_t *fifo)
+static INLINE_SPECIFIER int8_t is_fifo_empty(const FIFO_t *fifo)
 {
     if(fifo->head == fifo->tail)
     {
@@ -80,7 +79,7 @@ int8_t FIFO_dequeue(FIFO_t *fifo, void *data)
     return 0;
 }
 
-FIFO_elements_no_t FIFO_get_occupied(FIFO_t *fifo)
+FIFO_elements_no_t FIFO_get_occupied(const FIFO_t *fifo)
 {
     FIFO_elements_no_t head = fifo->head;
     FIFO_elements_no_t tail = fifo->tail;

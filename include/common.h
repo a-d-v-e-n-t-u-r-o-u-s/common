@@ -39,9 +39,9 @@
 /*!
  * \brief Macro gets amount of elements from array
  */
-#define ARRAY_SIZE(x)           sizeof(x)/sizeof(x[0])
-#define ARRAY_2D_ROW(x)         sizeof(x)/sizeof(x[0])
-#define ARRAY_2D_COLUMN(x)      sizeof(x[0])/sizeof(x[0][0])
+#define ARRAY_SIZE(x)           (sizeof(x)/sizeof(x[0]))
+#define ARRAY_2D_ROW(x)         (sizeof(x)/sizeof(x[0]))
+#define ARRAY_2D_COLUMN(x)      (sizeof(x[0])/sizeof(x[0][0]))
 
 /*!
  * \brief Definition of static assert macro
@@ -54,4 +54,4 @@
 void COMMON_dummy(void);
 
 /*@}*/
-#endif // COMMON_H
+#endif
