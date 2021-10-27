@@ -31,10 +31,8 @@ static INLINE_SPECIFIER int8_t is_fifo_full(const FIFO_t *fifo)
     {
         return 0;
     }
-    else
-    {
-        return -1;
-    }
+
+    return -1;
 }
 
 int8_t FIFO_enqueue(FIFO_t *fifo, const void *data)
@@ -58,10 +56,8 @@ static INLINE_SPECIFIER int8_t is_fifo_empty(const FIFO_t *fifo)
     {
         return 0;
     }
-    else
-    {
-        return -1;
-    }
+
+    return -1;
 }
 
 int8_t FIFO_dequeue(FIFO_t *fifo, void *data)
@@ -88,10 +84,8 @@ FIFO_elements_no_t FIFO_get_occupied(const FIFO_t *fifo)
     {
         return (head - tail);
     }
-    else
-    {
-        return ((FIFO_ELEMENTS_MAX - tail) + head + 1);
-    }
+
+    return ((FIFO_ELEMENTS_MAX - tail) + head + 1);
 }
 
 FIFO_elements_no_t FIFO_get_free(const FIFO_t *fifo)
