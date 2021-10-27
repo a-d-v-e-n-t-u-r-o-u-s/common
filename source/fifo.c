@@ -25,6 +25,14 @@
 #include <string.h>
 #include "common.h"
 
+/*!
+ * \brief Checks if fifo is full
+ *
+ * \param fifo  reference to the interal fifo structure
+ *
+ * \retval 0 fifo is full
+ * \retval -1 fifo isn't full
+ */
 static INLINE_SPECIFIER int8_t is_fifo_full(const FIFO_t *fifo)
 {
     if((fifo->head - fifo->tail) == fifo->config.elements_no)
@@ -50,6 +58,14 @@ int8_t FIFO_enqueue(FIFO_t *fifo, const void *data)
     return 0;
 }
 
+/*!
+ * \brief Checks if fifo is empty
+ *
+ * \param fifo  reference to the interal fifo structure
+ *
+ * \retval 0 fifo is empty
+ * \retval -1 fifo isn't empty
+ */
 static INLINE_SPECIFIER int8_t is_fifo_empty(const FIFO_t *fifo)
 {
     if(fifo->head == fifo->tail)
