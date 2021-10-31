@@ -43,6 +43,50 @@
 #define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND)?1:-1]
 
 /*!
+ *
+ * \addtogroup months
+ * \ingroup common
+ * \brief Months ids
+ */
+/*@{*/
+#define JANUARY                 (1U)
+#define FEBRUARY                (2U)
+#define MARCH                   (3U)
+#define APRIL                   (4U)
+#define MAY                     (5U)
+#define JUNE                    (6U)
+#define JULY                    (7U)
+#define AUGUST                  (8U)
+#define SEPTEMBER               (9U)
+#define OCTOBER                 (10U)
+#define NOVEMBER                (11U)
+#define DECEMBER                (12U)
+/*@}*/
+
+/*!
+ *
+ * \addtogroup days
+ * \ingroup common
+ * \brief Days ids
+ */
+/*@{*/
+#define DAYS_28                 (28U)
+#define DAYS_29                 (29U)
+#define DAYS_30                 (30U)
+#define DAYS_31                 (31U)
+/*@}*/
+
+/*!
+ *
+ * \addtogroup time_periods_yrs
+ * \ingroup common
+ * \brief Time periods in years
+ */
+/*@{*/
+#define CENTURY                 (100U)
+/*@}*/
+
+/*!
  * \brief Dummy function prototype to silence compiler warning
  */
 void COMMON_dummy(void);
