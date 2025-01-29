@@ -53,7 +53,7 @@ int8_t FIFO_enqueue(FIFO_t *fifo, const void *data)
     }
 
     offset = (fifo->head & (fifo->config.elements_no - 1)) * fifo->config.elements_size;
-    memcpy(&fifo->config.buffer[offset], data, fifo->config.elements_size);
+    (void) memcpy(&fifo->config.buffer[offset], data, fifo->config.elements_size);
     fifo->head++;
     return 0;
 }
@@ -86,7 +86,7 @@ int8_t FIFO_dequeue(FIFO_t *fifo, void *data)
     }
 
     offset = (fifo->tail & (fifo->config.elements_no - 1)) * fifo->config.elements_size;
-    memcpy(data, &fifo->config.buffer[offset], fifo->config.elements_size);
+    (void) memcpy(data, &fifo->config.buffer[offset], fifo->config.elements_size);
     fifo->tail++;
     return 0;
 }
@@ -111,7 +111,7 @@ FIFO_elements_no_t FIFO_get_free(const FIFO_t *fifo)
 
 void FIFO_configure(FIFO_t *fifo, const FIFO_config_t *config)
 {
-    memset(config->buffer, 0, config->elements_no * config->elements_size);
+    (void) memset(config->buffer, 0, config->elements_no * config->elements_size);
     fifo->config.elements_no = config->elements_no;
     fifo->config.elements_size = config->elements_size;
     fifo->config.buffer = config->buffer;

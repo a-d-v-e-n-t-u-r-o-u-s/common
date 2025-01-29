@@ -43,23 +43,41 @@
 typedef uint16_t FIFO_elements_no_t;
 
 /*!
+ * \struct FIFO_config_t
+ *
  * \brief Fifo configuration structure
+ *
+ * \var FIFO_config_t::elements_no
+ *      Amount of elements
+ * \var FIFO_config_t::elements_size
+ *      Size of element
+ * \var FIFO_config_t::buffer
+ *      External fifo buffer
  */
 typedef struct
 {
-    FIFO_elements_no_t elements_no; /*!< Amount of elements */
-    uint8_t elements_size; /*!< Size of element */
-    uint8_t *buffer; /*!< External fifo buffer */
+    FIFO_elements_no_t elements_no;
+    uint8_t elements_size;
+    uint8_t *buffer;
 } FIFO_config_t;
 
 /*!
+ * \struct FIFO_t
+ *
  * \brief Fifo internal structure
+ *
+ * \var FIFO_t::head
+ *      Fifo head, moves by enqueing
+ * \var FIFO_t::tail
+ *      Fifo tail, moves by dequeing
+ * \var FIFO_t::config
+ *      Fifo configuration
  */
 typedef struct
 {
-    FIFO_elements_no_t head; /*!< Fifo head, moves by enqueing */
-    FIFO_elements_no_t tail; /*!< Fifo tail, moves by dequeing */
-    FIFO_config_t config; /*!< Fifo configuration */
+    FIFO_elements_no_t head;
+    FIFO_elements_no_t tail;
+    FIFO_config_t config;
 } FIFO_t;
 
 /*!
